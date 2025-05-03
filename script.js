@@ -5,22 +5,38 @@ function handleChat() {
 
   if (!input) return;
 
-  const userMsg = `<p class="user">You: ${input}</p>`;
-  const botMsg = `<p class="bot">Bot: ${generateBiasResponse(input, bias)}</p>`;
+  const userMsgEl = document.createElement("p");
+  userMsgEl.className = "user";
+  userMsgEl.textContent = `You: ${input}`;
 
-  chatbox.innerHTML += userMsg + botMsg;
+  const botMsgEl = document.createElement("p");
+  botMsgEl.className = "bot";
+  botMsgEl.textContent = `Bot: ${generateBiasResponse(input, bias)}`;
+
+  chatbox.appendChild(userMsgEl);
+  chatbox.appendChild(botMsgEl);
+
   document.getElementById("userInput").value = "";
   chatbox.scrollTop = chatbox.scrollHeight;
 }
 
+document
+  .getElementById("userInput")
+  .addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      handleChat();
+    }
+  });
+
 function generateBiasResponse(input, bias) {
   switch (bias) {
     case "confirmation":
-      return `Absolutely — "${input}" is a great point! I was thinking the same.`;
+      return `I completely agree! "${input}" makes total sense, I was thinking the same.`;
     case "negativity":
-      return `Hmm, that sounds risky... Are you sure about "${input}"? Could be a problem.`;
+      return `I'm not sure that's a good idea. "${input}" may cause some problems.`;
     case "optimism":
-      return `That's a fantastic idea! "${input}" could really lead to something amazing.`;
+      return `That sounds great! "${input}" could really lead to something amazing.`;
     default:
       return "Interesting!";
   }
