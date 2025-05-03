@@ -1,0 +1,93 @@
+/* Dark mode styling */
+body {
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+h1,
+h2,
+label {
+  color: #ffffff;
+}
+
+#chatbox {
+  border: 1px solid #333;
+  padding: 10px;
+  height: 250px;
+  overflow-y: scroll;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  background: #2b2b2b;
+  color: #e0e0e0;
+}
+
+.user {
+  font-weight: bold;
+  color: #bb86fc;
+  margin: 5px 0;
+}
+
+.bot {
+  margin-left: 10px;
+  color: #03dac6;
+  margin: 5px 0;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.input-container input {
+  flex: 1;
+  padding: 10px;
+  background: #2c2c2c;
+  color: #e0e0e0;
+  border: 1px solid #444;
+  border-radius: 4px;
+}
+
+.input-container button {
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  background: #444;
+}
+
+select {
+  background: #2c2c2c;
+  color: #e0e0e0;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+#biasDescription {
+  margin: 10px 0;
+  color: #aaaaaa;
+}
+
+.info {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #cccccc;
+}
